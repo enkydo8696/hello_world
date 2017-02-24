@@ -1,0 +1,69 @@
+Codewar Practice(JAVA)
+
+=====================================================================================================================================
+<7kyu>Sum of Odd Number
+
+class RowSumOddNumbers {
+    public static int rowSumOddNumbers(int n) {
+        //TODO
+        int firstNumber = n * (n-1) + 1;
+        int sum = 0;
+        
+        for(int i = 0; i<n; i++){
+        sum += firstNumber + 2 * i;
+        }
+        
+        return sum;
+    }
+}
+
+This problem is just about summation of arithmetic sequence. Simply using for-loop, we can easily get the answer.
+All you need is a fomular of arithmetic sequence.
+
+=====================================================================================================================================
+<8kyu> String repeat
+
+public class Solution {
+    public static String repeatStr(final int repeat, final String string) {
+    
+    String ans = "";
+    
+        if(repeat <= 0 || string == ""){
+        ans = "";
+        } else{
+        for (int i=0; i < repeat; i++){
+        ans += string;
+}
+}
+        return ans;
+    }
+}
+
+This is really simple problem. Just make this code repeating "string" n times. But this answer is terrible because of useless codes. This is because I didn't understand exactily the sequence of for-loop.
+So I changed the code into
+
+public class Solution {
+    public static String repeatStr(final int repeat, final String string) {
+    String str = "";
+    for(int i = 0; i<repeat; i++){
+    str += string;
+    }
+        return str;
+    }
+}
+
+If 'repeat' becomes 0 or negative number, for-loop cannot works. So repeatStr returns "".
+And I also find an answer using StringBuilder class.
+
+public class Solution {
+    public static String repeatStr(final int repeat, final String string) {
+    StringBuilder st = new StringBuilder();
+    for(int i=0;i<repeat;i++){
+    st.append(string);
+    }
+        return st.toString();
+    }
+}
+
+
+=====================================================================================================================================
